@@ -1,20 +1,33 @@
 <!DOCTYPE html>
-<html lang="us-en">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JavaSript Quiz</title>
     <!-- Bootsrap -->
-    <link
+    <!-- <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
+      crossorigin="anonymous" -->
     />
     <!-- My personal style css -->
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
+    <!-- This will be the container for my homepage -->
+    <!-- container is a flexbox which will center the main content on the page -->
+    <div class="container">
+      <!-- ID home is going to have vertical direction of flexbox so that Javascript quiz, 
+     Play Game, and View Highscore are stacked vertically on top of each other -->
+      <div id="home" class="flex-center flex-column">
+        <h1>Javascript Quiz</h1>
+        <a class="btn" href="game.html">Play Game</a>
+        <a class="btn" href="highscores.html"> View Highscores</a>
+      </div>
+    </div>
+    <!-- End Body -->
+
     <!-- My linked Javascript which include questions -->
     <script src="javascript/questions.js"></script>
     <!-- My linked Javascript which include Functions -->
