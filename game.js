@@ -64,7 +64,7 @@ startGameQuiz = () => {
   //.. which is saying take this array and spread out each of its items and put
   // .. them into a new array
   availableQuestions = [...questions];
-  console.log(availableQuestions);
+
   getNewQuestion();
 };
 getNewQuestion = () => {
@@ -88,19 +88,27 @@ getNewQuestion = () => {
     choice.innerText = currentQuestion["choice" + number];
   });
   availableQuestions.splice(questionIndex, 1);
-  console.log(availableQuestions);
+
   acceptingAnswers = true;
 };
-
+// accepting answer when user answers questions
 choices.forEach((choice) => {
-  choice.addEventListener("click", (e) => {
+  choice.addEventListener("click", (event) => {
     if (!acceptingAnswers) return;
 
     acceptingAnswers = false;
-    const selectedChoice = e.target;
+    const selectedChoice = event.target;
     const selectedAnswer = selectedChoice.dataset["number"];
-    console.log(selectedAnswer);
-    getNewQuestion();
+
+    const classToApply =
+      selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
+
+    selectedChoice.parentElement.classList.add(classToApply);
+    // setTimeout is function built into javascript
+    setTimeout(() => {
+      selectedChoice.parentElement.classList.remove(classToApply);
+      getNewQuestion();
+    }, 500);
   });
 });
 
