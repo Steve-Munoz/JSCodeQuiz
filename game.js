@@ -70,7 +70,7 @@ startGameQuiz = () => {
 getNewQuestion = () => {
   if (availableQuestions.length === 0 || questionCounter >= maxQuestions) {
     //go to the end page
-    return window.location.assign("/end.html");
+    return window.location.assign("end.html");
   }
   // below we are incrementing so that we get a new question to pop up
   // .. once a question is answered
