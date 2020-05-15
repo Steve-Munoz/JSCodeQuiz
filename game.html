@@ -7,12 +7,12 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="game.css" />
   </head>
-  <body>
+  <body onload="start_timer()">
     <!-- container of page -->
     <div class="container">
       <div id="game" class="justify-center flex-column">
         <h2 id="question">
-          What is the answer to this question?
+          
         </h2>
 
         <div class="choice-container">
@@ -44,7 +44,12 @@
           </p>
           <p class="choice-text" data-number="4">Choice 4</p>
         </div>
-      </div>
+
+      <!-- timer -->
+
+      <div id="timer">
+        <div id="seconds"> 30 </div>
+    </div>
     </div>
     <!-- Above we are ending our container for page -->
     <!-- below I am referencing game.js file -->
