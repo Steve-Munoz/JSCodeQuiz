@@ -1,1 +1,3 @@
-# JSCodeQuiz
+I started off creating an MVP project in Github and created several todos that I then
+created into issues and created my branches from those issues.
+My issues ranged from setting up project files name to pseudocoding, linking external files, describing each of my JS files. I seperated my files into 3 different js files and three different html files. The first html file was the home page that you were then able to choose by button click if you wanted to play the quiz game or view highscores. I created different js files for the homepage, highscores page, and actual quiz game. I created my local storage in the highscores js file which was the last part of this project quiz. The timer was tricky at first but I was able to create my functions timer in my game.js files and was able to time it out once it reached 0 so that user was directed to the highscores page and ended the quiz regardless if they answered all the questions.
