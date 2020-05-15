@@ -18,13 +18,6 @@
   width: 100%;
 }
 
-.choice-container:hover {
-  cursor: pointer;
-  box-shadow: 0 0.4rem 1.4rem 0 rgb(86, 165, 235, 0.25);
-  transform: translateY(-0.1rem);
-  transition: transform 150ms;
-}
-
 .correct {
   background-color: green;
 }

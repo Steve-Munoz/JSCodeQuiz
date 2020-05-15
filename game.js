@@ -13,6 +13,8 @@
 const question = document.getElementById("question");
 const choices = Array.from(document.getElementsByClassName("choice-text"));
 
+var seconds = 30;
+
 var currentQuestion = {};
 var acceptingAnswers = false;
 // Below is asking what question are you on?
@@ -25,33 +27,53 @@ var availableQuestions = [];
 // below is our questions array in which will be what we will ask the users for our quiz
 let questions = [
   {
-    question: "Inside which HTML element do we put the JavaScript??",
-    choice1: "<script>",
-    choice2: "<javascript>",
-    choice3: "<js>",
-    choice4: "<scripting>",
-    answer: 1,
+    question: "Where is the correct place to insert a Javascript?",
+    choice1: "<body>",
+    choice2: "<head>",
+    choice3: "<header>",
+    choice4: "both <body> and <head>",
+    answer: 4,
   },
   {
-    question:
-      "What is the correct syntax for referring to an external script called 'xxx.js'?",
-    choice1: "<script href='xxx.js'>",
-    choice2: "<script name='xxx.js'>",
-    choice3: "<script src='xxx.js'>",
-    choice4: "<script file='xxx.js'>",
+    question: "How do you create a function in JavaScript?",
+    choice1: "function:myFunction()",
+    choice2: "function = myFunction()",
+    choice3: "function myFunction()",
+    choice4: "function.myFunction",
     answer: 3,
   },
   {
-    question: " How do you write 'Hello World' in an alert box?",
-    choice1: "msgBox('Hello World');",
-    choice2: "alertBox('Hello World');",
-    choice3: "msg('Hello World');",
-    choice4: "alert('Hello World');",
-    answer: 4,
+    question: " How do you add a comment in Javascript?",
+    choice1: "// This is my comment",
+    choice2: "<!-- This is my comment -->",
+    choice3: "comment: This is my comment",
+    choice4: "\\ This is my comment",
+    answer: 1,
   },
 ];
 
-//CONSTANTS
+// timer
+
+var seconds_interval = setInterval(secondsTimer, 1000);
+
+function secondsTimer() {
+  seconds = seconds - 1;
+  document.getElementById("seconds").innerHTML = "Timer: " + seconds;
+
+  // Check if the seconds and minutes counter has reached 0
+  // If reached 0 then end the session
+  if (seconds <= 0) {
+    clearInterval(seconds_interval);
+
+    // once time is up move to highscores html page
+    document.getElementById("seconds").innerHTML = "Times up!";
+    window.location.assign("highscores.html");
+  }
+}
+
+// end timer
+
+// set constants
 const correctBonus = 10;
 const maxQuestions = 3;
 
